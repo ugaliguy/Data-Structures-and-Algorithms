@@ -19,7 +19,10 @@ def lcm(a, b):
 	# Try using the formula lcm(a,b) = a*b/gcd(a,b)
 	m = max(a,b)
 	n = a + b - m
-	return int(m/gcd(a, b))*n
+	# Note the importance of making factors smaller before multiplying
+	# If we calculate a*b/gcd then large products can lead to 
+	# incorrect answers
+	return int(m/gcd(a, b))*n 
 
 if __name__ == '__main__':
     input = sys.stdin.read()
